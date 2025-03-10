@@ -1,3 +1,5 @@
+require_relative 'lib/doc_validator/version'
+
 Gem::Specification.new do |spec|
   spec.name          = "doc_validator"
   spec.version       = DocValidator::VERSION
