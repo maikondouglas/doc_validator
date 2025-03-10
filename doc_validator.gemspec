@@ -16,11 +16,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Dependências
-  spec.add_dependency "rspec", "~> 3.0", group: [:test]
-  spec.add_dependency "simplecov", "~> 0.21", group: [:test]
-  spec.add_dependency "bundler-audit", "~> 0.9", group: [:development, :test]
-  spec.add_dependency "pry", "~> 0.13", group: [:development]
-  spec.add_dependency "rubocop", "~> 1.0", group: [:development]
+  spec.add_dependency "rspec", "~> 3.0"
+  spec.add_dependency "simplecov", "~> 0.21"
+  spec.add_dependency "bundler-audit", "~> 0.9"
+  spec.add_dependency "pry", "~> 0.13"
+  spec.add_dependency "rubocop", "~> 1.0"
 
   # Dependências principais
   spec.add_dependency "bundler", "~> 2.0"
