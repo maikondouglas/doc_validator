@@ -30,14 +30,14 @@ gem install doc_validator
 Para validar um CPF, use o método `.valid?`:
 
 ```ruby
-DocValidator::CpfValidator.valid?("123.456.789-09")  # Retorna true
-DocValidator::CpfValidator.valid?("112.345.678-900") # Retorna false
+DocValidator::Cpf.valid?("123.456.789-09")  # Retorna true
+DocValidator::Cpf.valid?("112.345.678-900") # Retorna false
 ```
 
 Para formatar um CPF, use o método `.format`:
 
 ```ruby
-DocValidator::CpfValidator.format("12345678909")  # Retorna "123.456.789-09"
+DocValidator::Cpf.format("12345678909")  # Retorna "123.456.789-09"
 ```
 
 ### Validação de CNPJ
@@ -45,14 +45,14 @@ DocValidator::CpfValidator.format("12345678909")  # Retorna "123.456.789-09"
 Para validar um CNPJ, use o método `.valid?`:
 
 ```ruby
-DocValidator::CnpjValidator.valid?("12.345.678/0001-95")  # Retorna true
-DocValidator::CnpjValidator.valid?("123.456.789-09")      # Retorna false
+DocValidator::Cnpj.valid?("12.345.678/0001-95")  # Retorna true
+DocValidator::Cnpj.valid?("123.456.789-09")      # Retorna false
 ```
 
 Para formatar um CNPJ, use o método `.format`:
 
 ```ruby
-DocValidator::CnpjValidator.format("12345678000195")  # Retorna "12.345.678/0001-95"
+DocValidator::Cnpj.format("12345678000195")  # Retorna "12.345.678/0001-95"
 ```
 
 ### Validação de RG
@@ -60,14 +60,14 @@ DocValidator::CnpjValidator.format("12345678000195")  # Retorna "12.345.678/0001
 Para validar um RG, use o método `.valid?`:
 
 ```ruby
-DocValidator::RgValidator.valid?("12.345.678/0001-95")  # Retorna true
-DocValidator::RgValidator.valid?("11.234.567/0001-000") # Retorna false
+DocValidator::Rg.valid?("12.345.678/0001-95")  # Retorna true
+DocValidator::Rg.valid?("11.234.567/0001-000") # Retorna false
 ```
 
 Para formatar um RG, use o método `.format`:
 
 ```ruby
-DocValidator::RgValidator.format("12345678000195")  # Retorna "12.345.678/0001-95"
+DocValidator::Rg.format("12345678000195")  # Retorna "12.345.678/0001-95"
 ```
 
 ### Validação de CNH
