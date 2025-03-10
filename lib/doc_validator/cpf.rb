@@ -1,5 +1,5 @@
 module DocValidator
-  class CpfValidator
+  class Cpf
     def self.valid?(cpf)
       # Algoritmo de validação do CPF
       cpf = cpf.gsub(/\D/, '')  # Remover todos os caracteres não numéricos

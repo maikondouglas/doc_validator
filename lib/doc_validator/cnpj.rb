@@ -1,5 +1,5 @@
 module DocValidator
-  class CnpjValidator
+  class Cnpj
     def self.valid?(cnpj)
       # Algoritmo de validação do CNPJ
       cnpj = cnpj.gsub(/\D/, '')  # Remover todos os caracteres não numéricos

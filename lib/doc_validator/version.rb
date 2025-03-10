@@ -1,3 +1,3 @@
 module DocValidator
-  VERSION = "0.1.2"
+  VERSION = "1.1.2"
 end

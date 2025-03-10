@@ -1,5 +1,5 @@
 module DocValidator
-  class RgValidator
+  class Rg
     def self.valid?(rg)
       # Algoritmo de validação do RG
       rg = rg.gsub(/\D/, '')  # Remover todos os caracteres não numéricos
