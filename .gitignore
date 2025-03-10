@@ -1,0 +1,32 @@
+# Arquivos gerados pela gem
+*.gem
+
+# Arquivos de cobertura de código (SimpleCov)
+coverage/
+
+# Arquivos temporários
+/tmp/
+
+# Arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Arquivos de log
+*.log
+
+# Bundler
+.bundle/
+
+# Arquivos gerados por RSpec
+.rspect_status
+
+# Arquivos temporários de testes
+/spec/reports/
+/spec/tmp/
+
+# Dependências do Bundler
+vendor/bundle/
+
+# Arquivos de versão do Ruby
+.ruby-version
+.gem
