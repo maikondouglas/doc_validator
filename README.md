@@ -117,4 +117,4 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## Autores
 
-- Seu Nome - Criador e mantenedor
+- Maikon Douglas - Criador e mantenedor
