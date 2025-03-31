@@ -28,6 +28,10 @@ jobs:
     - name: Install dependencies
       run: bundle install
 
+    - name: Check Gemfile.lock consistency
+      run: |
+        bundle check || (echo "Gemfile.lock is out of sync with Gemfile. Please update it." && exit 1)
+
     - name: Run RuboCop
       run: bundle exec rubocop
 
