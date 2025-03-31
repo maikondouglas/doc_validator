@@ -40,6 +40,12 @@ Para formatar um CPF, use o método `.format`:
 DocValidator::Cpf.format("12345678909")  # Retorna "123.456.789-09"
 ```
 
+Para máscara um CNPJ, use o método `.mask`:
+
+```ruby
+DocValidator::Cnpj.mask("12345678909")  # Retorna "***.456.789-**"
+```
+
 ### Validação de CNPJ
 
 Para validar um CNPJ, use o método `.valid?`:
@@ -55,19 +61,31 @@ Para formatar um CNPJ, use o método `.format`:
 DocValidator::Cnpj.format("12345678000195")  # Retorna "12.345.678/0001-95"
 ```
 
+Para máscara um CNPJ, use o método `.mask`:
+
+```ruby
+DocValidator::Cnpj.mask("12345678000195")  # Retorna "**.*345.678/0001-**"
+```
+
 ### Validação de RG
 
 Para validar um RG, use o método `.valid?`:
 
 ```ruby
-DocValidator::Rg.valid?("12.345.678/0001-95")  # Retorna true
+DocValidator::Rg.valid?("12.345.678-9")  # Retorna true
 DocValidator::Rg.valid?("11.234.567/0001-000") # Retorna false
 ```
 
 Para formatar um RG, use o método `.format`:
 
 ```ruby
-DocValidator::Rg.format("12345678000195")  # Retorna "12.345.678/0001-95"
+DocValidator::Rg.format("123456789")  # Retorna "12.345.678-9"
+```
+
+Para máscara um RG, use o método `.mask`:
+
+```ruby
+DocValidator::Rg.mask("123456789")  # Retorna "***.345.678-*"
 ```
 
 ### Validação de CNH
