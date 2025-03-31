@@ -36,6 +36,7 @@ jobs:
       run: bundle exec rubocop
 
     - name: Run Brakeman
+      if: ${{ always() && (hashFiles('**/Gemfile') != '') }}
       run: bundle exec brakeman
 
     - name: Run Bundler Audit
