@@ -27,6 +27,9 @@ jobs:
     - name: Install dependencies
       run: bundle install
 
+    - name: Install oathtool
+      run: sudo apt-get install -y oathtool
+
     - name: Check if version exists on RubyGems
       id: check_version
       run: |
@@ -50,8 +53,8 @@ jobs:
         chmod 0600 $HOME/.gem/credentials
         printf -- "---\n:rubygems_api_key: ${RUBYGEMS_AUTH_TOKEN}\n" > $HOME/.gem/credentials
         gem build *.gemspec
-        echo "Enter OTP for RubyGems:"
-        read -s OTP
-        gem push *.gem --otp ${OTP}
+        otp=$(oathtool --totp -b "${RUBYGEMS_OTP_SECRET}")
+        gem push *.gem --otp ${otp}
       env:
         RUBYGEMS_AUTH_TOKEN: ${{ secrets.RUBYGEMS_AUTH_TOKEN }}
+        RUBYGEMS_OTP_SECRET: ${{ secrets.RUBYGEMS_OTP_SECRET }}
