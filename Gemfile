@@ -7,7 +7,6 @@ ruby '3.4.2'
 gem 'bundler', '~> 2.0'
 
 group :development, :test do
-  gem 'brakeman', require: false
   gem 'bundler-audit', require: false
   gem 'pry'
   gem 'rspec'
