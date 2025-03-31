@@ -33,27 +33,16 @@ jobs:
         gem build *.gemspec
         gem_name=$(ls *.gem | head -n 1)
         gem_version=$(echo $gem_name | grep -oP '\d+\.\d+\.\d+')
-        if gem search "^$(basename $gem_name .gem)$" --remote | grep -q $gem_version; then
+        gem_name_without_version=$(basename $gem_name .gem)
+        if gem search "^${gem_name_without_version}$" --remote | grep -q $gem_version; then
           echo "Version $gem_version already exists on RubyGems. Skipping publish."
-          echo "::set-output name=version_exists::true"
+          echo "version_exists=true" >> $GITHUB_ENV
         else
-          echo "::set-output name=version_exists::false"
+          echo "version_exists=false" >> $GITHUB_ENV
         fi
 
-    - name: Publish to GitHub Packages
-      if: steps.check_version.outputs.version_exists == 'false'
-      run: |
-        mkdir -p $HOME/.gem
-        touch $HOME/.gem/credentials
-        chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:github: Bearer ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
-        gem build *.gemspec
-        gem push --key github --host https://rubygems.pkg.github.com/${OWNER} *.gem
-      env:
-        GEM_HOST_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-        OWNER: ${{ github.repository_owner }}
-
     - name: Publish to RubyGems
+      if: env.version_exists == 'false'
       run: |
         echo "Ensure MFA is enabled on your RubyGems account (UI and API level)."
         mkdir -p $HOME/.gem
