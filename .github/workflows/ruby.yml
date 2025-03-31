@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.6', '2.7', '3.0', '3.4']
+        ruby-version: ['3.4.2']
 
     steps:
     - uses: actions/checkout@v4
@@ -25,9 +25,6 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
-
-    - name: Install Bundler
-      run: gem install bundler -v 2.6.5
 
     - name: Install dependencies
       run: bundle install
