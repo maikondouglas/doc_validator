@@ -4,16 +4,23 @@ Gem::Specification.new do |spec|
   # Informações básicas da gem
   spec.name          = "doc_validator"
   spec.version       = DocValidator::VERSION
-  spec.authors       = ["Seu Nome"]
-  spec.email         = ["seuemail@exemplo.com"]
+  spec.platform      = Gem::Platform::RUBY
+  spec.authors       = "Maikon Douglas"
+  spec.email         = "maikonconta0@gmail.com"
   spec.summary       = "Uma gem para validação e formatação de documentos"
   spec.description   = "Essa gem valida e formata documentos como CPF, CNPJ, RG, CNH e outros."
   spec.homepage      = "https://github.com/maikondouglas/doc_validator"
   spec.license       = "MIT"
+  spec.metadata    = {
+    "homepage_uri"      => "https://github.com/maikondouglas/doc_validator",
+    "source_code_uri"   => "https://github.com/maikondouglas/doc_validator",
+    "bug_tracker_uri"   => "https://github.com/maikondouglas/doc_validator/issues"
+  }
 
   # Arquivos da gem
   spec.files         = Dir["lib/**/*", "README.md", "LICENSE"]
   spec.require_paths = ["lib"]
+  spec.required_ruby_version = ">= 2.7"
 
   # Dependências
   spec.add_dependency "rspec", "~> 3.0"
