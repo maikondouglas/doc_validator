@@ -39,8 +39,9 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}
         gem_version=$(grep -oP '\d+\.\d+\.\d+' *.gemspec | head -n 1)
+        git fetch --tags # Certifique-se de que as tags remotas estão sincronizadas
         git tag "v${gem_version}"
-        git push origin "v${gem_version}"
+        git push origin "v${gem_version}" --force # Use --force se necessário para sobrescrever
 
     - name: Upload Release Assets
       uses: actions/upload-release-asset@v1
