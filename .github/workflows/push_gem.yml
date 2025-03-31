@@ -28,16 +28,20 @@ jobs:
       run: bundle install
 
     - name: Check if version exists on RubyGems
+      id: check_version
       run: |
         gem build *.gemspec
         gem_name=$(ls *.gem | head -n 1)
         gem_version=$(echo $gem_name | grep -oP '\d+\.\d+\.\d+')
         if gem search "^$(basename $gem_name .gem)$" --remote | grep -q $gem_version; then
           echo "Version $gem_version already exists on RubyGems. Skipping publish."
-          exit 0
+          echo "::set-output name=version_exists::true"
+        else
+          echo "::set-output name=version_exists::false"
         fi
 
     - name: Publish to GitHub Packages
+      if: steps.check_version.outputs.version_exists == 'false'
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
