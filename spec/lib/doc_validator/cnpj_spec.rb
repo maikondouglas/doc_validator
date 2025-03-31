@@ -17,4 +17,10 @@ RSpec.describe DocValidator::Cnpj do
       expect(DocValidator::Cnpj.format("12345678000195")).to eq("12.345.678/0001-95")
     end
   end
+
+  describe ".mask" do
+    it "masks the CNPJ correctly" do
+      expect(DocValidator::Cnpj.mask("12345678000195")).to eq("**.*345.678/0001-**")
+    end
+  end
 end

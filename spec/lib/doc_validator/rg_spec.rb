@@ -17,4 +17,10 @@ RSpec.describe DocValidator::Rg do
       expect(DocValidator::Rg.format("123456789")).to eq("12.345.678-9")
     end
   end
+
+  describe ".mask" do
+    it "mask the RG correctly" do
+      expect(DocValidator::Rg.mask("123456789")).to eq("***.345.678-*")
+    end
+  end
 end
