@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DocValidator
   class Cnpj
     def self.valid?(cnpj)

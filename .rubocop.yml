@@ -1,0 +1,25 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.4
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: true
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false

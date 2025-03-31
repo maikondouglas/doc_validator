@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DocValidator
   class Rg
     def self.valid?(rg)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DocValidator
   class Cpf
     def self.valid?(cpf)
